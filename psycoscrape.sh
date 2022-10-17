@@ -54,6 +54,16 @@ main() {
            echo
            command wget example.com/crossdomain.xml  #renamedomain
            echo
+           echo "____  ___  _________ _________"
+           echo "\   \/  / /   _____//   _____/"
+           echo  "\     /  \_____  \ \_____  \" 
+           echo  "/     \  /        \/        \"
+           echo "/___/\  \/_______  /_______  /"
+           echo "      \_/        \/        \/"
+           echo
+           echo
+           command nmap --script exploit -Pn -f www.example.com
+           echo
            echo
            echo "        ___    __  __    "
            echo "       /   \/\ \ \/ _\  " 

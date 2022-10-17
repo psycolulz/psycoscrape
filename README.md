@@ -12,4 +12,4 @@ PsycoScrape can find header information, robots.txt files, crossdomain.xml, XSS 
 
 Will There Be Changes In The Future?
 ===========================================
-Absolutely! I Will Update The Tool Rather Frequintly So Make Sure To Update Often!
+Absolutely! I Will Update The Tool Rather Frequently So Make Sure To Update Often!

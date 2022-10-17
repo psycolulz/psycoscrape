@@ -7,7 +7,7 @@ main() {
     echo "Created By: psycolulz"
     echo "GitHub: https://github.com/psycolulz"
     echo "Leave A Follow And Star The Repository <3"
-    echo
+    echo "Make Sure To Run This Tool As Root!"
     echo
     echo       ":::::::::   ::::::::   ::::::::  :::   :::  ::::::::   " 
     echo      ":+:    :+: :+:    :+: :+:    :+: :+:   :+: :+:    :+: "         

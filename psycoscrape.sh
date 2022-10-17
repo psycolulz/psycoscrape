@@ -1,4 +1,5 @@
 #!/bin/bash
+command sudo su
 clear
 tput bold 
 main() {

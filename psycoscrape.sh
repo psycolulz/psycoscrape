@@ -43,7 +43,7 @@ main() {
            echo "\/ \_/\___/|_;__/ \___/ \__|___(_)__/_/\_\\__| |___/\__._| \_/ \___|\__._|"
            echo                                                               
            echo
-           command wget example.com/robots.txt -o robots.txt   #renamedomain
+           command wget example.com/robots.txt    #renamedomain
            echo
            echo
            echo "   ___                      _                       _       "
@@ -52,7 +52,7 @@ main() {
            echo "/ /__| | | (_) \__ \__ \ (_; | (_) | | | | | | (_| | | | | |"
            echo "\____/_|  \___/|___/___/\__._|\___/|_| |_| |_|\__._|_|_| |_|"
            echo
-           command wget example.com/crossdomain.xml -o crossdomain.txt #renamedomain
+           command wget example.com/crossdomain.xml  #renamedomain
            echo
            echo
            echo "        ___    __  __    "

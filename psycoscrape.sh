@@ -52,7 +52,7 @@ main() {
            echo "/ /__| | | (_) \__ \__ \ (_; | (_) | | | | | | (_| | | | | |"
            echo "\____/_|  \___/|___/___/\__._|\___/|_| |_| |_|\__._|_|_| |_|"
            echo
-           command wget example.com/crossdomain.xml -o crossdomain.txt #renameboth
+           command wget example.com/crossdomain.xml -o crossdomain.txt #renamedomain
            echo
            echo
            echo "        ___    __  __    "
@@ -65,6 +65,7 @@ main() {
            command dig www.example.com 
            command dig -x www.example.com
            command dig www.example.com mx
+           command dig www.example.com ns
            echo
            echo
            echo "(Press Ctrl +x )"

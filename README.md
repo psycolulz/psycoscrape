@@ -8,7 +8,7 @@ Don't Worry, It Is Pretty Easy To Understand.
 
 What Can It Gather?
 ============================
-PsycoScrape can find header information, robots.txt files, crossdomain.xml, XSS Vulnerabilities, and dns information
+PsycoScrape can find header information, WHOIS Info, robots.txt files, crossdomain.xml, XSS Vulnerabilities, and dns information
 
 Will There Be Changes In The Future?
 ===========================================

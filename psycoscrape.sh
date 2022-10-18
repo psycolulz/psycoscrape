@@ -114,4 +114,8 @@ main() {
                    
 echo "Press Ctrl + C"⠀
 ;;
+         esac
+         done
          
+         }
+         main

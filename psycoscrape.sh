@@ -34,7 +34,17 @@ main() {
         echo " / __  /  __/ (_| | (_| |  __/ |"   
         echo " \/ /_/ \___|\__._|\__._|\___|_|"   
         echo                          
-           command HEAD www.example.com   #replace
+           command HEAD www.example.com   #renamedomain
+           echo
+           echo
+           echo "  __      __.__           .___         "
+           echo " /  \    /  \  |__   ____ |   | ______ "
+           echo " \   \/\/   /  |  \ /  _ \|   |/  ___/ "
+           echo "  \        /|   Y  (  <_> )   |\___ \  "
+           echo "   \__/\  / |___|  /\____/|___/____  > "
+           echo "        \/       \/                \/  "
+           echo
+           command whois www.example.com -H #renamedomain
            echo
            echo "   __       _           _        _        _                             _ "
            echo "  /__\ ___ | |__   ___ | |_ ___ | |___  _| |_   ___  __ ___   _____  __| |"

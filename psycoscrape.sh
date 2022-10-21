@@ -53,7 +53,7 @@ banner() {
         echo " / __  /  __/ (_| | (_| |  __/ |"   
         echo " \/ /_/ \___|\__._|\__._|\___|_|"   
         echo                          
-           command HEAD $domain   #replace
+           command HEAD $domain   
            echo
            echo "   __       _           _        _        _                             _ "
            echo "  /__\ ___ | |__   ___ | |_ ___ | |___  _| |_   ___  __ ___   _____  __| |"
@@ -62,7 +62,7 @@ banner() {
            echo "\/ \_/\___/|_;__/ \___/ \__|___(_)__/_/\_\\__| |___/\__._| \_/ \___|\__._|"
            echo                                                               
            echo
-           command wget $domain/robots.txt -o robots.txt   #renamedomain
+           command wget $domain/robots.txt    
            echo
            echo
            echo "   ___                      _                       _       "
@@ -71,7 +71,7 @@ banner() {
            echo "/ /__| | | (_) \__ \__ \ (_; | (_) | | | | | | (_| | | | | |"
            echo "\____/_|  \___/|___/___/\__._|\___/|_| |_| |_|\__._|_|_| |_|"
            echo
-           command wget $domain/crossdomain.xml -o crossdomain.txt #renameboth
+           command wget $domain/crossdomain.xml 
            echo
            echo
            echo "        ___    __  __    "

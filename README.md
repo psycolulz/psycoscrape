@@ -3,8 +3,7 @@ Bash Web Applicaton Scanner
 
 How To Use
 ============================
-RUN AS ROOT!!! Just like All Of My Previous Projects, Users Will Be Forced To Learn How To View And Edit Code While Also Learning The Proper Input For Each Function.
-Don't Worry, It Is Pretty Easy To Understand.
+RUN AS ROOT!!! Updated The Tool To Where It No Longer Requires Users To Edit The Code. I Originally Wanted Users To Learn How To Read And Edit Code While Learning What The Manual Requests Are To Get The Desired Information, But I Have Decided To Aim For Convenience Instead.
 
 What Can It Gather?
 ============================

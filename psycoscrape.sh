@@ -1,13 +1,13 @@
 #!/bin/bash
 clear
 tput bold 
-main() {
+banner() {
     echo 
     echo "PsycoScrape"
     echo "Created By: psycolulz"
     echo "GitHub: https://github.com/psycolulz"
     echo "Leave A Follow And Star The Repository <3"
-    echo "Make Sure To Run This Tool As Root!"
+    echo
     echo
     echo       ":::::::::   ::::::::   ::::::::  :::   :::  ::::::::   " 
     echo      ":+:    :+: :+:    :+: :+:    :+: :+:   :+: :+:    :+: "         
@@ -19,13 +19,32 @@ main() {
     echo
     echo
     echo "Website-Scanner Made By PsycoLulz"
+}
+    menu() {
     echo
-    PS3='root@psycoscrape~:'
-    options=("Scan Website(Edit Default Domain In Code)" "Update Tool") 
-    select opt in "${options[@]}"
-         do
-         case $opt in
-           "Scan Website(Edit Default Domain In Code)")
+    echo "1. Scan A Website"
+    echo "2. Update Tool"
+    read -p $'Choose An Option:' menuchoice
+    if [[ $menuchoice == "1" ]] then 
+    hostnameenter
+    elif [[ $menuchoice == "2" ]] then
+    updatetool
+    else
+    command clear
+    banner
+    menu
+    fi    
+}
+    hostnameenter() {
+      command clear
+      echo
+      echo
+      echo "Enter Hostname Below Without https://"
+      read domain
+      scansite
+    }
+    
+      scansite() {     
            command clear 
            echo
         echo "                       _ "          
@@ -34,17 +53,7 @@ main() {
         echo " / __  /  __/ (_| | (_| |  __/ |"   
         echo " \/ /_/ \___|\__._|\__._|\___|_|"   
         echo                          
-           command HEAD www.example.com   #renamedomain
-           echo
-           echo
-           echo "  __      __.__           .___         "
-           echo " /  \    /  \  |__   ____ |   | ______ "
-           echo " \   \/\/   /  |  \ /  _ \|   |/  ___/ "
-           echo "  \        /|   Y  (  <_> )   |\___ \  "
-           echo "   \__/\  / |___|  /\____/|___/____  > "
-           echo "        \/       \/                \/  "
-           echo
-           command whois www.example.com -H #renamedomain
+           command HEAD $domain   #replace
            echo
            echo "   __       _           _        _        _                             _ "
            echo "  /__\ ___ | |__   ___ | |_ ___ | |___  _| |_   ___  __ ___   _____  __| |"
@@ -53,7 +62,7 @@ main() {
            echo "\/ \_/\___/|_;__/ \___/ \__|___(_)__/_/\_\\__| |___/\__._| \_/ \___|\__._|"
            echo                                                               
            echo
-           command wget example.com/robots.txt    #renamedomain
+           command wget $domain/robots.txt -o robots.txt   #renamedomain
            echo
            echo
            echo "   ___                      _                       _       "
@@ -62,17 +71,7 @@ main() {
            echo "/ /__| | | (_) \__ \__ \ (_; | (_) | | | | | | (_| | | | | |"
            echo "\____/_|  \___/|___/___/\__._|\___/|_| |_| |_|\__._|_|_| |_|"
            echo
-           command wget example.com/crossdomain.xml  #renamedomain
-           echo
-           echo "____  ___  _________ _________ "
-           echo "\   \/  / /   _____//   _____/ "
-           echo  "\     /  \_____  \ \_____  \ " 
-           echo  "/     \  /        \/        \ "
-           echo "/___/\  \/_______  /_______  / "
-           echo "      \_/        \/        \/ "
-           echo
-           echo
-           command nmap --script exploit -Pn -f www.example.com
+           command wget $domain/crossdomain.xml -o crossdomain.txt #renameboth
            echo
            echo
            echo "        ___    __  __    "
@@ -82,40 +81,38 @@ main() {
            echo "    /___,/\_\ \/  \__/"  
            echo
            echo 
-           command dig www.example.com 
-           command dig -x www.example.com
-           command dig www.example.com mx
-           command dig www.example.com ns
+           command dig $domain 
+           command dig -x $domain
+           command dig $domain mx
            echo
            echo
-           echo "(Press Ctrl +x )"
-           ;;
-           "Update Tool")
+           echo "Press Ctrl + C"
+           sleep 100
+           banner
+      }
+           updatetool() {
            command clear
            command git pull 
            command clear
            echo 
-           echo " ⠀⠀⠀⠀⠀         ⠀⠀⢀⣴⣿⣿⣿⣷⣶⣴⣾⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀
-         ⠀⠀⠀⠀⣀⣤⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣄⠀⠀⠀⠀
-         ⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀
-         ⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀
-         ⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀
-         ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠈⢻⣿⣿⣿⣿⣿⣿⣿
-         ⢿⣿⣿⣿⣿⣿⣿⣿⡿⠻⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿
-         ⢈⣿⣿⣿⣿⣿⣿⣯⡀⠀⠈⠻⣿⣿⣿⠟⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁
-         ⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠈⠛⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
-         ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-         ⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁
-         ⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀
-         ⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀
-          ⠀⠀⠀⠉⠛⠛⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⠛⠉⠁⠀⠀⠀
-         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⠿⢿⡻⠿⣿⣿⣿⠟⠁⠀⠀⠀
-         "
-                   
-echo "Press Ctrl + C"⠀
-;;
-         esac
-         done
-         
-         }
-         main
+           echo "Tool Has Been Updated Successfully!"
+           echo  "              ⢀⣴⣿⣿⣿⣷⣶⣴⣾⣿⣿⣿⣦⡀"⠀⠀⠀⠀⠀⠀⠀⠀
+           echo  "         ⣀⣤⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣄"⠀⠀⠀⠀
+           echo  "⠀ ⠀   ⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷"⠀⠀⠀
+           echo  "  ⠀   ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿."⠀⠀
+           echo  "   ⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀"
+           echo  "   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠈⢻⣿⣿⣿⣿⣿⣿⣿"
+           echo  "   ⢿⣿⣿⣿⣿⣿⣿⣿⡿⠻⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿"
+           echo  "   ⢈⣿⣿⣿⣿⣿⣿⣯⡀⠀⠈⠻⣿⣿⣿⠟⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁"
+           echo  "   ⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠈⠛⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷"
+           echo  "   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
+           echo  "    ⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁"
+           echo⠀ "       ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇"⠀⠀
+           echo⠀⠀"      ⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀"⠀
+           echo ⠀"        ⠉⠛⠛⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⠛⠉⠁"⠀⠀⠀
+           echo⠀⠀"⠀           ⠀⠀⠻⣿⣿⣿⠿⢿⡻⠿⣿⣿⣿⠟⠁"⠀⠀⠀
+           echo "Sleep Is Set To 100, Exit To Restart"
+           sleep 100
+           }
+               banner
+               menu
